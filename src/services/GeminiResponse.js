@@ -2,7 +2,7 @@ import { GoogleGenAI } from "@google/genai";
 import { generatePrompt } from "./prompts/prompt.js";
 
 const API_KEY = process.env.GEMINI_API || '';
-console.log("Using Gemini API Key:", API_KEY);
+// console.log("Using Gemini API Key:", API_KEY);
 const ai = new GoogleGenAI({
   apiKey: API_KEY
 });
@@ -15,7 +15,7 @@ export async function getGeminiResponse(userProblem) {
 
   try {
     const prompt = generatePrompt(userProblem);
-    console.log("Generated Prompt for Gemini:", prompt);
+    // console.log("Generated Prompt for Gemini:", prompt);
     const result = await ai.models.generateContent({    
     model: "gemini-2.5-flash",
     contents: prompt,

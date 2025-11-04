@@ -1,7 +1,7 @@
 import express from "express"
 import cors from "cors"
 import cookieParser from "cookie-parser"
-
+import { queryLimiter } from "./config/rateLimit.config.js"
 const app = express()
 
 app.use(cors({
@@ -19,7 +19,11 @@ app.use(cookieParser())
 
 
 //routes declaration
-app.use("/api/v1", queryRouter)
+app.get("/", (req, res) => {
+  res.send("Welcome to the home page!");
+});
+
+app.use("/api/v1", queryLimiter, queryRouter)
 
 
 export { app }

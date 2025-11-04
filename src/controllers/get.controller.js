@@ -2,10 +2,9 @@ import Query from "../models/query.model.js";
 import { getGeminiResponse } from "../services/GeminiResponse.js";
 
 export const getResponse = async (req, res) => {
-  console.log("Inside getResponse controller");
   console.log("Request Body:", req.body);
   const { query } = req.body;
-  console.log(req);
+  // console.log(req);
   if (!query) {
     return res.status(400).json({ message: "Query is required" });
   }
