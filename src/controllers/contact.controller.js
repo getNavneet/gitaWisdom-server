@@ -1,4 +1,4 @@
-import Feedback from "../models/contact.model";
+import Feedback from "../models/contact.model.js";
 import Newsletter from "../models/newsletter.model.js";
 
 export const submitFeedback = async (req, res) => {

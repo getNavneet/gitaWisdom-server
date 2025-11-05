@@ -19,6 +19,7 @@ app.use(cookieParser())
 //routes import
 import queryRouter from './api/routes/get.route.js'
 import visitRouter from './api/routes/visit.route.js'
+import contactRouter from './api/routes/contact.route.js'
 
 
 //routes declaration
@@ -28,6 +29,8 @@ app.get("/", (req, res) => {
 
 app.use("/api/v1/query", queryLimiter, queryRouter)
 app.use("/api/v1/visit", visitRouter)
+app.use("/api/v1/contact", contactRouter)
+
 
 
 export { app }

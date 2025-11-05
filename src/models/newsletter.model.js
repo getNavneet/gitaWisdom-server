@@ -5,5 +5,5 @@ const newsletterSchema = new Schema({
   createdAt: { type: Date, default: Date.now }
 });
 
-const Newsletter = mongoose.model('Feedback', newsletterSchema);
+const Newsletter = mongoose.model('newsletter', newsletterSchema);
 export default Newsletter;
